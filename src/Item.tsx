@@ -21,6 +21,7 @@ const ItemDiv = styled.div<{ isDragging: Boolean; pos: Pos }>`
   font-weight: bold;
   margin: 5px;
   padding: 10px;
+  touch-action: none;
   box-sizing: border-box;
   background: ${(props) => (props.isDragging ? "#3eb0ef" : "transparent")};
   transform: translate(${(props) => `${props.pos.x}px, ${props.pos.y}`}px);
@@ -31,12 +32,14 @@ const Item = ({ item, id, moveToZone }: Props) => {
   const [pos, setPos] = useState<Pos>({ x: 0, y: 0 });
   const itemRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const mousedown$ = fromEvent<MouseEvent>(
+    const mousedown$ = fromEvent<PointerEvent>(
       itemRef.current as HTMLDivElement,
       "pointerdown"
     );
-    const mousemove$ = fromEvent<MouseEvent>(document, "pointermove");
-    const mouseup$ = fromEvent<MouseEvent>(document, "pointerup").pipe(share());
+    const mousemove$ = fromEvent<PointerEvent>(document, "pointermove");
+    const mouseup$ = fromEvent<PointerEvent>(document, "pointerup").pipe(
+      share()
+    );
     const drag$ = mousedown$.pipe(
       switchMap((start) => {
         return merge(
