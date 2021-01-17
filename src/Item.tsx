@@ -42,7 +42,6 @@ const Item = ({ item, id, moveToZone }: Props) => {
         return merge(
           mousemove$.pipe(
             map((move) => {
-              move.preventDefault();
               return {
                 type: "move",
                 x: move.x - start.x,
