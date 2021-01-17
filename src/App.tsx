@@ -12,9 +12,10 @@ const Container = styled.div`
 `;
 
 const DropZone = styled.div`
-  border: 1px solid black;
+  border: 1px solid #3eb0ef;
   width: 100%;
   min-height: 40vw;
+  color: white;
 `;
 
 const items: Record<number, Item> = [...new Array(5)]
@@ -49,7 +50,7 @@ function App() {
       <Container>
         {Object.keys(zones).map((zone) => (
           <DropZone key={`${zone}`} id={`${zone}`}>
-            <div>{zone}</div>
+            <h1>{zone}</h1>
             {[...zones[zone as dropZone]].map((id: number) => (
               <Item item={items[id]} id={id} moveToZone={moveToZone} key={id} />
             ))}
