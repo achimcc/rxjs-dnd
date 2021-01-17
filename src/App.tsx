@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 
 const DropZone = styled.div`
-  border: 1px solid #3eb0ef;
+  border: 2px solid #3eb0ef;
   width: 100%;
   min-height: 40vw;
   color: #5b65b7;
