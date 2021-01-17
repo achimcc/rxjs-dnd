@@ -9,6 +9,7 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 50px;
   margin: 5vw;
+  background: #191b1f;
 `;
 
 const DropZone = styled.div`
