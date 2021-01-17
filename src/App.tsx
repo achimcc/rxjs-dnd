@@ -17,7 +17,7 @@ const DropZone = styled.div`
   min-height: 40vw;
 `;
 
-const items: Record<number, Item> = [...new Array(10)]
+const items: Record<number, Item> = [...new Array(5)]
   .map((el, ind) => ind)
   .reduce((acc: Record<number, Item>, cur: number) => {
     acc[cur] = { title: `Item ${cur}` };
@@ -29,7 +29,7 @@ function App() {
     enableMapSet();
   }, []);
   const [zones, setZones] = useState({
-    zone1: new Set<number>([...new Array<number>(10)].map((el, ind) => ind)),
+    zone1: new Set<number>([...new Array<number>(5)].map((el, ind) => ind)),
     zone2: new Set<number>(),
   });
 
