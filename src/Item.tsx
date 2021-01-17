@@ -76,7 +76,7 @@ const Item = ({ item, id, moveToZone }: Props) => {
           const path = document
             .elementsFromPoint(evt.x, evt.y)
             .map((el) => el && el.id);
-          const zones = ["zone1", "zone2"];
+          const zones = ["Zone1", "Zone2"];
           const zoneToDrop = zones.find((zone) => path.includes(zone));
           if (zoneToDrop) {
             moveToZone(id, zoneToDrop);

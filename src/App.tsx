@@ -30,8 +30,8 @@ function App() {
     enableMapSet();
   }, []);
   const [zones, setZones] = useState({
-    zone1: new Set<number>([...new Array<number>(5)].map((el, ind) => ind)),
-    zone2: new Set<number>(),
+    Zone1: new Set<number>([...new Array<number>(5)].map((el, ind) => ind)),
+    Zone2: new Set<number>(),
   });
 
   const moveToZone = (idToSet: number, toZone: dropZone) => {
