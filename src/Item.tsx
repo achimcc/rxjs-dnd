@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { map, switchMap, take, takeUntil } from "rxjs/operators";
+import { map, switchMap, take, takeUntil, share } from "rxjs/operators";
 import { fromEvent, merge } from "rxjs";
 import styled from "styled-components";
 
@@ -36,7 +36,7 @@ const Item = ({ item, id, moveToZone }: Props) => {
       "mousedown"
     );
     const mousemove$ = fromEvent<MouseEvent>(document, "mousemove");
-    const mouseup$ = fromEvent<MouseEvent>(document, "mouseup");
+    const mouseup$ = fromEvent<MouseEvent>(document, "mouseup").pipe(share());
     const drag$ = mousedown$.pipe(
       switchMap((start) => {
         return merge(
