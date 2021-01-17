@@ -33,15 +33,16 @@ const Item = ({ item, id, moveToZone }: Props) => {
   useEffect(() => {
     const mousedown$ = fromEvent<MouseEvent>(
       itemRef.current as HTMLDivElement,
-      "mousedown"
+      "pointerdown"
     );
-    const mousemove$ = fromEvent<MouseEvent>(document, "mousemove");
-    const mouseup$ = fromEvent<MouseEvent>(document, "mouseup").pipe(share());
+    const mousemove$ = fromEvent<MouseEvent>(document, "pointermove");
+    const mouseup$ = fromEvent<MouseEvent>(document, "pointerup").pipe(share());
     const drag$ = mousedown$.pipe(
       switchMap((start) => {
         return merge(
           mousemove$.pipe(
             map((move) => {
+              move.preventDefault();
               return {
                 type: "move",
                 x: move.x - start.x,
