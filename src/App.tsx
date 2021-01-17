@@ -15,7 +15,7 @@ const DropZone = styled.div`
   border: 1px solid #3eb0ef;
   width: 100%;
   min-height: 40vw;
-  color: white;
+  color: #5b65b7;
 `;
 
 const items: Record<number, Item> = [...new Array(5)]

@@ -15,12 +15,13 @@ type Pos = {
 };
 
 const ItemDiv = styled.div<{ isDragging: Boolean; pos: Pos }>`
-  border: 1px solid black;
+  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 10px/50%;
+  color: #3eb0ef,
   margin: 5px;
   padding: 10px;
   box-sizing: border-box;
-  background: ${(props) => (props.isDragging ? "yellow" : "white")};
+  background: ${(props) => (props.isDragging ? "#5b65b7" : "transparent")};
   transform: translate(${(props) => `${props.pos.x}px, ${props.pos.y}`}px);
 `;
 
