@@ -21,7 +21,7 @@ const ItemDiv = styled.div<{ isDragging: Boolean; pos: Pos }>`
   margin: 5px;
   padding: 10px;
   box-sizing: border-box;
-  background: ${(props) => (props.isDragging ? "#5b65b7" : "transparent")};
+  background: ${(props) => (props.isDragging ? "#3eb0ef" : "transparent")};
   transform: translate(${(props) => `${props.pos.x}px, ${props.pos.y}`}px);
 `;
 
