@@ -15,7 +15,7 @@ type Pos = {
 };
 
 const ItemDiv = styled.div<{ isDragging: Boolean; pos: Pos }>`
-  border: 2px solid rgba(255, 255, 255, 0.75);
+  border: 2px solid #3eb0ef;
   border-radius: 10px/50%;
   color: rgba(255, 255, 255, 0.75);
   font-weight: bold;
