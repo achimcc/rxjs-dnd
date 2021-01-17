@@ -7,9 +7,10 @@ import Item from "./Item";
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 50px;
-  margin: 5vw;
+  grid-column-gap: 1vw;
+  margin: 4vw;
   background: #191b1f;
+  padding: 1vw;
 `;
 
 const DropZone = styled.div`
